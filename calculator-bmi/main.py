@@ -8,14 +8,18 @@ def kategori_bmi(bmi):
     else:
         return "Obesitas"
 
-    
 def calculator_bmi():
     print("===== BMI CALCULATOR ====")
-    berat = input("Masukkan berat badan (kg): ")
-    tinggi = input("Masukkan tinggi badan (cm): ")
+    berat = float(input("Masukkan berat badan (kg): "))
+    tinggi = float(input("Masukkan tinggi badan (cm): "))
 
-    bmi = berat / tinggi ** 2
+    tinggi = tinggi / 100  # ubah cm ke meter
+    bmi = berat / (tinggi ** 2)
     result = kategori_bmi(bmi)
-    print(f"Berat badan: {result} kg")
 
-    
+    print(f"\nBMI Anda: {bmi:.2f}")
+    print(f"Kategori: {result}")
+    calculator_bmi()
+
+# Jalankan program
+calculator_bmi()
