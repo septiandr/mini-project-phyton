@@ -37,7 +37,8 @@ def pilihan(key):
 
 def print_pilihan_user():
     print("===== PEMESANAN ANDA =====")
-    print(pilihan_user)
+    for i, (key, value) in enumerate(pilihan_user, start=1):
+        print(f"{i}. {key} : {value}")
 
 print_menu(menu)
 input_menu('Makanan', menu['makanan'])
