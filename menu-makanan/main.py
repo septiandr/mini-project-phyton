@@ -35,8 +35,11 @@ def pilihan(key):
         return False  # Hentikan loop input_menu
 
 
+def print_pilihan_user():
+    print("===== PEMESANAN ANDA =====")
+    print(pilihan_user)
 
 print_menu(menu)
 input_menu('Makanan', menu['makanan'])
 input_menu('Minuman', menu['minuman'])
-# pilihan_user()
+print_pilihan_user()
