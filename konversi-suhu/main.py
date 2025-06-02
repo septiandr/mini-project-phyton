@@ -24,7 +24,7 @@ def conditional_menu(menu):
     elif menu == "5":
         celcius_ke_kelvin(True)
     elif menu == "6":
-        kelvin_ke_fahrenheit()
+        fahrenheit_ke_kelvin(True)
     elif menu == "7":
         exit()
     else:
@@ -37,33 +37,49 @@ def celcius_ke_fahrenheit(revert = False):
         input_fahrenheit = input("Masukkan suhu dalam Fahrenheit: ")
         result = (float(input_fahrenheit) - 32) * 5/9
         print(f"{input_fahrenheit} Fahrenheit = {result} Celcius")
+        print("\n")
+        goto_menu()
         return  
 
     input_celcius = input("Masukkan suhu dalam Celcius: ")
     result = (float(input_celcius) * 9/5) +32
     print(f"{input_celcius} Celcius = {result} Fahrenheit")
+    print("\n")
+    goto_menu()
 
 def celcius_ke_kelvin(revert = False):
     if revert:
         input_kelvin = input("Masukkan suhu dalam Kelvin: ")
         result = float(input_kelvin) - 273.15
         print(f"{input_kelvin} Kelvin = {result} Celcius")
+        print("\n")
+        goto_menu()
         return
 
     input_celcius = input("Masukkan suhu dalam Celcius: ")
     result = float(input_celcius) + 273.15
     print(f"{input_celcius} Celcius = {result} Kelvin")
+    print("\n")
+    goto_menu()
 
 def fahrenheit_ke_kelvin(revert = False):
     if revert:
         input_kelvin = input("Masukkan suhu dalam Kelvin: ")
         result = (float(input_kelvin) - 273.15) * 9/5 + 32
         print(f"{input_kelvin} Kelvin = {result} Fahrenheit")
+        print("\n")
+        goto_menu()
         return
-        
+
     input_fahrenheit = input("Masukkan suhu dalam Fahrenheit: ")
     result = (float(input_fahrenheit) - 32) * 5/9 + 273.15
     print(f"{input_fahrenheit} Fahrenheit = {result} Kelvin")
+    print("\n")
+    goto_menu()
+
+def goto_menu():
+    input("Tekan enter untuk kembali ke menu")
+    menu()
 
 
 menu()
