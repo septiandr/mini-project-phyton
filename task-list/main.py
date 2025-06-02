@@ -11,6 +11,7 @@ def show_menu():
     print("1. Create Task")
     print("2. Delete Task")
     print("3. Show Task")
+    print("4. Exit")
     conditional_menu()
 
 
@@ -23,6 +24,8 @@ def conditional_menu():
         delete_task()
     elif menu == "3":
         list_task()
+    elif menu == "4":
+        return
     else:
         print("Menu Not Found")
 
@@ -33,12 +36,12 @@ def create_task():
 
     if task_name in task:
         print("Task Already Exist")
-        back_to_menu()
+        list_task()
         return
     else:
         task.append(task_name)
         print("Task Created")
-        back_to_menu()
+        list_task()
 
 def list_task():
     print("----- Task List -----")
@@ -47,13 +50,12 @@ def list_task():
         back_to_menu()
         return
     
-    for i, item in enumeration(task, start=1):
+    for i, item in enumerate(task, start=1):
         print(f"{i}. {item}")
 
     back_to_menu()
 
 def delete_task():
-    list_task()
     delete_task_number = input("Input Delete Task Number: ")
     index_data_task = int(delete_task_number) - 1
     if task[index_data_task] == None:
@@ -73,5 +75,6 @@ def back_to_menu():
         show_menu()
     else:
         print("Menu Not Found")
+        back_to_menu()
 
 show_menu()
