@@ -11,7 +11,11 @@ def show_menu():
     print("1. Create Task")
     print("2. Delete Task")
     print("3. Show Task")
+    conditional_menu()
 
+
+
+def conditional_menu():
     menu = input("Input Menu: ")
     if menu == "1":
         create_task()
@@ -21,6 +25,7 @@ def show_menu():
         list_task()
     else:
         print("Menu Not Found")
+
 
 def create_task():
     
