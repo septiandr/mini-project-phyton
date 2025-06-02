@@ -10,6 +10,7 @@ def menu():
 
     menu = input("Pilih Konversi (number): ")
     conditional_menu(menu)
+    print("\n")
 
 def conditional_menu(menu):
     if menu == "1":
@@ -30,6 +31,28 @@ def conditional_menu(menu):
         print("Pilihan tidak tersedia")
         menu()
         conditional_menu(input("Pilih Konversi (number): "))
+
+def celcius_ke_fahrenheit(revert = False):
+    if revert:
+        input_fahrenheit = input("Masukkan suhu dalam Fahrenheit: ")
+        result = (float(input_fahrenheit) - 32) * 5/9
+        print(f"{input_fahrenheit} Fahrenheit = {result} Celcius")
+        return  
+
+    input_celcius = input("Masukkan suhu dalam Celcius: ")
+    result = (float(input_celcius) * 9/5) +32
+    print(f"{input_celcius} Celcius = {result} Fahrenheit")
+
+def celcius_ke_kelvin(revert = False):
+    if revert:
+        input_kelvin = input("Masukkan suhu dalam Kelvin: ")
+        result = float(input_kelvin) - 273.15
+        print(f"{input_kelvin} Kelvin = {result} Celcius")
+        return
+        
+    input_celcius = input("Masukkan suhu dalam Celcius: ")
+    result = float(input_celcius) + 273.15
+    print(f"{input_celcius} Celcius = {result} Kelvin")
 
 
 menu()
