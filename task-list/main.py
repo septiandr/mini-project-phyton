@@ -45,11 +45,12 @@ def create_task():
 
 def list_task():
     print("----- Task List -----")
-    if len(task) == 0:
+    #get data length
+    if len(task) == 0: 
         print("Task List is Empty")
         back_to_menu()
         return
-    
+    #get data with index start index from 1
     for i, item in enumerate(task, start=1):
         print(f"{i}. {item}")
 
