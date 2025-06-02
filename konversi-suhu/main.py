@@ -18,11 +18,11 @@ def conditional_menu(menu):
     elif menu == "2":
         celcius_ke_kelvin()
     elif menu == "3":
-        fahrenheit_ke_celcius()
+        celcius_ke_fahrenheit(True)
     elif menu == "4":
         fahrenheit_ke_kelvin()
     elif menu == "5":
-        kelvin_ke_celcius()
+        celcius_ke_kelvin(True)
     elif menu == "6":
         kelvin_ke_fahrenheit()
     elif menu == "7":
@@ -49,10 +49,21 @@ def celcius_ke_kelvin(revert = False):
         result = float(input_kelvin) - 273.15
         print(f"{input_kelvin} Kelvin = {result} Celcius")
         return
-        
+
     input_celcius = input("Masukkan suhu dalam Celcius: ")
     result = float(input_celcius) + 273.15
     print(f"{input_celcius} Celcius = {result} Kelvin")
+
+def fahrenheit_ke_kelvin(revert = False):
+    if revert:
+        input_kelvin = input("Masukkan suhu dalam Kelvin: ")
+        result = (float(input_kelvin) - 273.15) * 9/5 + 32
+        print(f"{input_kelvin} Kelvin = {result} Fahrenheit")
+        return
+        
+    input_fahrenheit = input("Masukkan suhu dalam Fahrenheit: ")
+    result = (float(input_fahrenheit) - 32) * 5/9 + 273.15
+    print(f"{input_fahrenheit} Fahrenheit = {result} Kelvin")
 
 
 menu()
