@@ -27,4 +27,9 @@ def list_task():
     for i, item in enumeration(task, start=1):
         print(f"{i}. {item}")
 
-
+def delete_task():
+    list_task()
+    delete_task_number = input("Input Delete Task Number: ")
+    index_data_task = int(delete_task_number) - 1
+    task.pop(index_data_task)
+    print("Task Deleted")
