@@ -39,6 +39,11 @@ def create_task():
         print("Task Created")
 
 def list_task():
+    print("----- Task List -----")
+    if len(task) == 0:
+        print("Task List is Empty")
+        return
+    
     for i, item in enumeration(task, start=1):
         print(f"{i}. {item}")
 
