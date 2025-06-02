@@ -33,26 +33,38 @@ def create_task():
 
     if task_name in task:
         print("Task Already Exist")
+        back_to_menu()
         return
     else:
         task.append(task_name)
         print("Task Created")
+        back_to_menu()
 
 def list_task():
     print("----- Task List -----")
     if len(task) == 0:
         print("Task List is Empty")
+        back_to_menu()
         return
     
     for i, item in enumeration(task, start=1):
         print(f"{i}. {item}")
 
+    back_to_menu()
+
 def delete_task():
     list_task()
     delete_task_number = input("Input Delete Task Number: ")
     index_data_task = int(delete_task_number) - 1
+    if task[index_data_task] == None:
+        print("Task Not Found")
+        back_to_menu()
+        return
+    
+    # delete data
     task.pop(index_data_task)
     print("Task Deleted")
+    back_to_menu()
 
 def back_to_menu():
     print("-------------------")
