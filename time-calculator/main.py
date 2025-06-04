@@ -1,5 +1,6 @@
 from datetime import datetime
 import pytz
+# Remove unused import
 
 def start():
     now = datetime.now()
