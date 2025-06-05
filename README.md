@@ -23,6 +23,10 @@ Repositori ini berisi beberapa proyek sederhana yang dibuat untuk latihan logika
 6. **📝 Task List**  
    Program daftar tugas interaktif dengan fitur tambah, hapus, dan tampilkan task. Dilengkapi dengan validasi duplikat.
 
+6. **📝 Time Calculator**  
+   Program kalkulator waktu yang memungkinkan pengguna menambahkan, mengurangi, dan menampilkan waktu.
+
+
 ## 💻 Bahasa Pemrograman
 - Python 3.x
 
