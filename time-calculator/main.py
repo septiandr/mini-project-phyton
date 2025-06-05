@@ -26,54 +26,7 @@ def start():
     else:
         print("Pilihan tidak tersedia")
         start()
-def add_time():
-    print("\n====== Add Time ======\n")
-    print("Format: HH:MM:SS")
-    print("Example: 01:00:00")
-    print("\n")
-    time1 = input("Masukkan waktu pertama: ")
-    time2 = input("Masukkan waktu kedua: ")
-    time1 = time1.split(":")
-    time2 = time2.split(":")
-    time1 = [int(x) for x in time1]
-    time2 = [int(x) for x in time2]
-    time1 = time1[0] * 3600 + time1[1] * 60 + time1[2]
-    time2 = time2[0] * 3600 + time2[1] * 60 + time2[2]
-    result = time1 + time2
-    result = str(result)
-    result = result.split(":")
-    result = [int(x) for x in result]
-    result = result[0] * 3600 + result[1] * 60 + result[2]
-    result = str(result)
-    result = result.split(":")
-    result = [int(x) for x in result]
-    print(f"{time1} + {time2} = {result[0]}:{result[1]}:{result[2]}")
-    print("\n")
-    start()
-def subtract_time():
-    print("\n====== Subtract Time ======\n")
-    print("Format: HH:MM:SS")
-    print("Example: 01:00:00")
-    print("\n")
-    time1 = input("Masukkan waktu pertama: ")
-    time2 = input("Masukkan waktu kedua: ")       
-    time1 = time1.split(":")
-    time2 = time2.split(":")
-    time1 = [int(x) for x in time1]
-    time2 = [int(x) for x in time2]     
-    time1 = time1[0] * 3600 + time1[1] * 60 + time1[2]
-    time2 = time2[0] * 3600 + time2[1] * 60 + time2[2]
-    result = time1 - time2
-    result = str(result)
-    result = result.split(":")
-    result = [int(x) for x in result]
-    result = result[0] * 3600 + result[1] * 60 + result[2]
-    result = str(result)
-    result = result.split(":")
-    result = [int(x) for x in result]
-    print(f"{time1} - {time2} = {result[0]}:{result[1]}:{result[2]}")
-    print("\n")
-    start()
+
 
 
 
