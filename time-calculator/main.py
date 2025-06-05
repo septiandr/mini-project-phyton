@@ -29,7 +29,8 @@ def start():
 
 def add_time():
     print("\n====== Add Time ======\n")
-    startTime = input("Masukkan waktu awal (HH:MM:SS): ")
+    startTime = input_time()
+
     hour, minute, second = map(int, startTime.split(":"))
     penambah = int(input("Masukkan waktu yang akan ditambahkan (dalam detik): "))
 
@@ -54,6 +55,16 @@ def add_time():
         start()
     else:
         add_time()
+
+
+
+def input_time():
+    startTime = input("Masukkan waktu awal (HH:MM:SS): ")
+    if re.match(pattern, startTime):
+        return startTime
+    else:
+        print("Format waktu tidak valid")
+        input_time()
 
 def go_back():
     is_gobak = input("apakah anda ingin kembali ke menu? (y/n): ")
