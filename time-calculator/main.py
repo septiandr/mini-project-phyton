@@ -56,7 +56,31 @@ def add_time():
     else:
         add_time()
 
+def subtract_time():
+    print("\n====== Subtract Time ======\n")
+    startTime = input_time()
+    hour, minute, second = map(int, startTime.split(":"))
+    pengurang = int(input("Masukkan waktu yang akan dikurangi (dalam detik): "))
+    # handle second
+    if pengurang % 60 == 0:
+        minute -= pengurang / 60
+    else:
+        minute -= pengurang / 60
+        second -= pengurang % 60
+    #handle minute
+    if minute % 60 == 0:
+        hour -= minute / 60
+    else:
+        hour -= minute / 60
+        minute = minute % 60
 
+    print("\n=============================")
+    print(f"\nHasil: {int(hour)}:{int(minute)}:{int(second)}")
+    print("\n")
+    if go_back():
+        start()
+    else:
+        subtract_time()
 
 def input_time():
     startTime = input("Masukkan waktu awal (HH:MM:SS): ")
