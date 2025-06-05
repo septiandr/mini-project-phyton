@@ -1,5 +1,8 @@
 from datetime import datetime
+import re
 # Remove unused import
+
+pattern = r"^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$"
 
 def start():
     now = datetime.now()
@@ -44,9 +47,19 @@ def add_time():
         hour += minute / 60
         minute = minute % 60
     
-    print(f"\nHasil: {int(hour)}:{int(minute)}:{int(second)}")
     print("\n=============================")
+    print(f"\nHasil: {int(hour)}:{int(minute)}:{int(second)}")
     print("\n")
+    if go_back():
+        start()
+    else:
+        add_time()
 
+def go_back():
+    is_gobak = input("apakah anda ingin kembali ke menu? (y/n): ")
+    if is_gobak == "y":
+        return True
+    elif is_gobak == "n":
+        return False
 
 start()
