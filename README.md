@@ -31,3 +31,10 @@ Pastikan Python sudah terinstal di perangkat kamu:
 
 ```bash
 python nama_file.py
+
+
+
+cara menggunakan venv
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt

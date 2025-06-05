@@ -1,15 +1,12 @@
 from datetime import datetime
-import pytz
 # Remove unused import
 
 def start():
     now = datetime.now()
-    timezone = pytz.timezone("Asia/Jakarta")
     
     print("\n====== Time Calculator ======\n")
     print(f"Date: {now.strftime('%d %B %Y')}")
     print(f"Time: {now.strftime('%H:%M:%S')}")
-    print(f"\nTimezone: {timezone}")
     print("\n=============================")
     print("\n")
     print("Menu:")
@@ -31,20 +28,25 @@ def add_time():
     print("\n====== Add Time ======\n")
     startTime = input("Masukkan waktu awal (HH:MM:SS): ")
     hour, minute, second = map(int, startTime.split(":"))
-    penambah = int(input("Masukkan waktu yang akan ditambahkan (dalam menit): "))
-    penambahToSecond = penambah / 60 
+    penambah = int(input("Masukkan waktu yang akan ditambahkan (dalam detik): "))
 
-    newSecond = second + penambahToSecond
-
-    if newSecond % 60 == 0:
-        newSecond = 0
-        minute = minute + (newSecond / 60)
+    # handle second
+    if penambah % 60 == 0:
+        minute += penambah / 60
     else:
-        newSecond = newSecond % 60
-        minute = minute + (newSecond / 60)
+        minute += penambah / 60
+        second += penambah % 60
 
-
-
+    #handle minute
+    if minute % 60 == 0:
+        hour += minute / 60
+    else:
+        hour += minute / 60
+        minute = minute % 60
+    
+    print(f"\nHasil: {int(hour)}:{int(minute)}:{int(second)}")
+    print("\n=============================")
+    print("\n")
 
 
 start()
