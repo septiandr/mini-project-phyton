@@ -35,7 +35,7 @@ def add_note():
         f.write(note + "\n")
     print("Note added")
     main()
-    
+
 def edit_note():
     with open("notes.txt", "r") as f:
         notes = f.readlines()
@@ -43,6 +43,28 @@ def edit_note():
         print(f"{i+1}. {note}")
     choice = input("Enter the number of the note you want to edit: ")
     if choice.isdigit() and int(choice) <= len(notes):
+        new_note = input("Enter the new note: ")
+        notes[int(choice)-1] = new_note + "\n"
+        with open("notes.txt", "w") as f:
+            f.writelines(notes)
+        print("Note edited")
+    else:
+        print("Invalid choice")
+    main()
+def delete_note():
+    with open("notes.txt", "r") as f:
+        notes = f.readlines()
+    for i, note in enumerate(notes):
+        print(f"{i+1}. {note}")
+    choice = input("Enter the number of the note you want to delete: ")
+    if choice.isdigit() and int(choice) <= len(notes):
+        del notes[int(choice)-1]
+        with open("notes.txt", "w") as f:
+            f.writelines(notes)
+        print("Note deleted")
+    else:
+        print("Invalid choice")
+    main()
 
 
 main()
