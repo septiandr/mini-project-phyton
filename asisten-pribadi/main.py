@@ -18,9 +18,11 @@ def main():
     elif choice == "2":
         edit_note()
     elif choice == "3":
-        calculator()
+        delete_note()
     elif choice == "4":
-        exit()
+        show_note()
+    elif choice == "5":
+        calculator()
     else:
         print("Invalid choice")
         main()
@@ -65,6 +67,20 @@ def delete_note():
     else:
         print("Invalid choice")
     main()
-
+def show_note():
+    with open("notes.txt", "r") as f:
+        notes = f.readlines()
+    for i, note in enumerate(notes):
+        print(f"{i+1}. {note}")
+    main()
+def calculator():
+    print("\n====== Calculator ======\n")
+    input = input("Enter your calculation: ")
+    try:
+        result = eval(input)
+        print(f"Result: {result}")
+    except:
+        print("Invalid calculation")
+    main()
 
 main()
