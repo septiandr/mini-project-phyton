@@ -1,6 +1,9 @@
+from datetime import datetime
+
 def main():
-    print("Hi Gav")
+    print("\nHi Gav")
     print("What do you want to do?\n")
+    time()
 
     print("1. Add Note")
     print("2. Show Notes")
@@ -19,5 +22,11 @@ def main():
     else:
         print("Invalid choice")
         main()
+
+def time():
+    time = datetime.now()
+    print(f"{time.strftime('%A, %d %B %Y %H:%M:%S')}\n")
+    
+    
 
 main()
