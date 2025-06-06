@@ -36,7 +36,7 @@ def add_note():
     with open("notes.txt", "a") as f:
         f.write(note + "\n")
     print("Note added")
-    main()
+    confirmation()
 
 def edit_note():
     with open("notes.txt", "r") as f:
@@ -52,7 +52,7 @@ def edit_note():
         print("Note edited")
     else:
         print("Invalid choice")
-    main()
+    confirmation()
 def delete_note():
     with open("notes.txt", "r") as f:
         notes = f.readlines()
@@ -66,13 +66,13 @@ def delete_note():
         print("Note deleted")
     else:
         print("Invalid choice")
-    main()
+    confirmation()
 def show_note():
     with open("notes.txt", "r") as f:
         notes = f.readlines()
     for i, note in enumerate(notes):
         print(f"{i+1}. {note}")
-    main()
+    confirmation()
 def calculator():
     print("\n====== Calculator ======\n")
     input = input("Enter your calculation: ")
@@ -81,6 +81,14 @@ def calculator():
         print(f"Result: {result}")
     except:
         print("Invalid calculation")
-    main()
+    confirmation()
+
+def confirmation():
+    confirmation = input("press y to back to menu? (y/n): ")
+    if confirmation == "y":
+        main()
+    else:
+        print("Thank you for using this program")
+        exit()  
 
 main()
