@@ -27,6 +27,7 @@ Repositori ini berisi beberapa proyek sederhana yang dibuat untuk latihan logika
    Program kalkulator waktu yang memungkinkan pengguna menambahkan, mengurangi, dan menampilkan waktu.
 
 7.**📝 Asisten pribadi**  
+progran untuk menambah, mengedit dan menghapus catatan, serta dilengkapi jam dan kalkulator
 
 
 ## 💻 Bahasa Pemrograman
