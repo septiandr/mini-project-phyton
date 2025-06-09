@@ -11,6 +11,21 @@ def chatbot():
             print("Bot: Terima kasih telah mengobrol. Sampai jumpa!")
             break
 
+        # Menyapa
+        elif any(word in user_input for word in ["halo", "hai", "selamat pagi", "selamat siang", "selamat sore"]):
+            print("Bot: Hai juga! Senang bertemu denganmu 😊")
+
+        # Tanya nama pengguna
+        elif "nama saya" in user_input:
+            nama = user_input.replace("nama saya", "").strip().capitalize()
+            print(f"Bot: Hai {nama}, senang berkenalan denganmu!")
+
+        elif "siapa nama saya" in user_input:
+            if nama:
+                print(f"Bot: Namamu {nama}, kan? 😉")
+            else:
+                print("Bot: Aku belum tahu namamu. Coba ketik 'nama saya [namamu]'.")
+
         # Salam
         elif any(word in user_input for word in ["halo", "hai", "selamat pagi", "selamat siang", "selamat sore"]):
             print("Bot: Hai juga! Senang bertemu denganmu 😊")
