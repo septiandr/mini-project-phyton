@@ -53,6 +53,16 @@ def chatbot():
                 "Kamu hebat, jangan ragukan dirimu sendiri!"
             ]
             print(f"Bot: {random.choice(motivasi)}")
+        
+        # Hitung umur
+        elif "umur saya" in user_input or "lahir tahun" in user_input:
+            try:
+                tahun = int(''.join(filter(str.isdigit, user_input)))
+                now = datetime.datetime.now()
+                umur = now.year - tahun
+                print(f"Bot: Kalau kamu lahir tahun {tahun}, umurmu sekitar {umur} tahun.")
+            except:
+                print("Bot: Maaf, aku tidak bisa mengerti tahun lahirmu.")
 
         # Ucapan terima kasih
         elif "terima kasih" in user_input or "makasih" in user_input:
