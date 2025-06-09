@@ -36,6 +36,18 @@ def chatbot():
         elif any(word in user_input for word in ["bye", "dadah", "sampai jumpa"]):
             print("Bot: Sampai jumpa lagi! 🌟")
 
+        elif "tebak angka" in user_input:
+            angka_bot = random.randint(1, 10)
+            print("Bot: Aku sudah memilih angka dari 1 sampai 10. Coba tebak!")
+            try:
+                tebakan = int(input("Tebakanmu: "))
+                if tebakan == angka_bot:
+                    print("Bot: Wah! Kamu benar 🎉")
+                else:
+                    print(f"Bot: Salah, yang benar adalah {angka_bot}. Coba lagi lain kali!")
+            except:
+                print("Bot: Itu bukan angka yang valid 😅")
+
         # Tidak dikenal
         else:
             print("Bot: Maaf, aku belum mengerti itu. Coba tanya hal lain ya!")
