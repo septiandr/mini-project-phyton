@@ -42,6 +42,17 @@ def chatbot():
         elif "jam" in user_input or "waktu" in user_input:
             now = datetime.datetime.now()
             print(f"Bot: Sekarang jam {now.strftime('%H:%M')}.")
+        
+        # Motivasi
+        elif "motivasi" in user_input or "semangat" in user_input:
+            motivasi = [
+                "Jangan menyerah, hari ini penuh peluang!",
+                "Terus belajar, terus maju 💪",
+                "Kesuksesan adalah hasil dari usaha yang tidak terlihat.",
+                "Setiap hari adalah kesempatan baru!",
+                "Kamu hebat, jangan ragukan dirimu sendiri!"
+            ]
+            print(f"Bot: {random.choice(motivasi)}")
 
         # Ucapan terima kasih
         elif "terima kasih" in user_input or "makasih" in user_input:
